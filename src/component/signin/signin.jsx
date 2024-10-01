@@ -47,7 +47,9 @@ function Signin() {
         if (response.status === 200) {
           alert(`로그인 되셨습니다. 사용자 고유 번호[${response.data}]`)
           return response
-        }}
+        }} else {
+          alert('모든 정보를 입력해주세요')
+      }
 
     } catch (error) {
       alert('로그인 중 문제가 발생했습니다.')
@@ -63,6 +65,7 @@ function Signin() {
         value={userInfo.id}
         name='id'
         onChange={handleInputChange}
+        required
       >
       </InputContainer>
 
@@ -71,9 +74,13 @@ function Signin() {
         placeholder='비밀번호를 입력해주세요'
         value={userInfo.password}
         name='password'
-        onChange={handleInputChange}>
+        onChange={handleInputChange}
+        required>
+        
       </InputContainer>
-      <Button onClick={hangleLogin}>로그인</Button>
+      <Button 
+        disabled={!userInfo}
+        onClick={hangleLogin}>로그인</Button>
     </>
   )
 }

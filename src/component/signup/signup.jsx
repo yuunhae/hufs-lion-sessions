@@ -54,7 +54,7 @@ function SignUp() {
                 }
 
             } else {
-                alert('모든 정보를 입력해주세요')
+                alert('아이디와 비밀번로 모두 입력해주세요')
             }
         } catch (error) {
             if (error.response) {
@@ -89,6 +89,7 @@ function SignUp() {
                 value={userInfo.id}
                 name='id'
                 onChange={handleInputChange}
+                required  
             />
 
             <InputContainer
@@ -97,17 +98,17 @@ function SignUp() {
                 onChange={handleInputChange}
                 value={userInfo.pw}
                 name='password'
+                required
             />
 
             <InputContainer
-                placeholder='이메일을 입력해주세요'
+                placeholder='이메일을 입력해주세요 (선택사항)'
                 value={userInfo.email}
                 name='email'
                 onChange={handleInputChange}
             />
 
             <Button
-                disabled={!userInfo}
                 onClick={handleSubmitJoin}>회원가입</Button>
         </>
     )
