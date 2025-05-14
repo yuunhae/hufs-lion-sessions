@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.black-bg {
+  display: flex;
+  background: black;
+  width: 100%;
+  color: orange;
+  padding-left: 20px;
+}
